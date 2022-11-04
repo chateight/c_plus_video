@@ -8,6 +8,7 @@
 
 /*
 Linux & Mac version
+code from https://qiita.com/srs/items/c9286b5cff99e741b993
 */
 
 class simple_udp{
