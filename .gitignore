@@ -17,5 +17,6 @@ stub
 video
 cv_video
 a.out
+!CMakeLists.txt
 
 
