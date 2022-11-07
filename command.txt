@@ -1,0 +1,8 @@
+takeoff
+right 20
+ccw 90
+up 20
+cw 90
+left 20
+down 20
+land
