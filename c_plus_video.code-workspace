@@ -1,7 +1,13 @@
 {
-    "folders": [
+	"folders": [
 		{
-			"path": "../c_plus_video"
+			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"files.associations": {
+			"iosfwd": "cpp",
+			"fstream": "cpp"
+		}
+	}
 }

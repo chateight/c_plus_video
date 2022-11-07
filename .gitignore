@@ -15,4 +15,7 @@ compiler*.ts
 stub.*
 stub
 video
+cv_video
+a.out
+
 
