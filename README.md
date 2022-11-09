@@ -6,7 +6,7 @@ required lib : opencv
 
 source files
 
-- video.cpp : send tello command from the command.txt file and recieve the tello status
+- video.cpp : send tello command from the command.txt file and receive the tello status
 - ctello_stream.cpp : storing the video stream and sending commands from the command file(command.txt)
 
 command.txt file describes the tello control command sequence.
