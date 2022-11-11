@@ -17,6 +17,10 @@ stub
 video
 cv_video
 a.out
+test.*
+test
+/src/spdlog
+/build
 !CMakeLists.txt
 !command.txt
 
