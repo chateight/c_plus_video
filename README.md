@@ -11,6 +11,11 @@ source files
 
 command.txt file describes the tello control command sequence.
 
+>> how to build(@ source directory)
+
+% cmake -S . -B build
+% cmake --build build
+
 link to the tello sdk icnluding command list
 https://dl-cdn.ryzerobotics.com/downloads/tello/20180910/Tello%20SDK%20Documentation%20EN_1.3.pdf
 
