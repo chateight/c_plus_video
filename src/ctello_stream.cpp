@@ -26,15 +26,21 @@
 #include <thread>
 #include <fstream>
 #include "simple_udp.h"
+#include "ctello.h"
+
 
 const char* const TELLO_STREAM_URL{"udp://0.0.0.0:11111"};
-simple_udp udp0("192.168.10.1",8889);
+simple_udp udp0_s("192.168.10.1",8889);
+simple_udp udp0_r("0.0.0.0",8889);
 simple_udp udp1("0.0.0.0",8890);
 
+using ctello::Tello;
 using cv::CAP_FFMPEG;
 using cv::imshow;
 using cv::VideoCapture;
 using cv::waitKey;
+
+bool com_end = false;       // command chain is terminated
 
 
 void command_th(){
@@ -46,21 +52,34 @@ void command_th(){
     while(std::getline(r_file, r_l_buffer)){
         std::cout << r_l_buffer << std::endl;
 
-        udp0.udp_send(r_l_buffer);
+        udp0_s.udp_send(r_l_buffer);
         sleep(5);
 
         udp1.udp_bind();
         std::string rdata=udp1.udp_recv();
         std::cout << rdata << std::endl;
     }
+    com_end = true;
     return;
 }
 
 int main()
 {
-    udp0.udp_send("command");
+    /*
+    Tello tello{};
+    if (!tello.Bind())
+    {
+        return 0;
+    }
+
+    tello.SendCommand("streamon");
+    while (!(tello.ReceiveResponse()));
+    */
+    
+    udp0_s.udp_send("command");
     sleep(1);
-    udp0.udp_send("streamon");
+    udp0_s.udp_send("streamon");
+    
 
     VideoCapture capture{TELLO_STREAM_URL, CAP_FFMPEG};
 
@@ -82,7 +101,7 @@ int main()
             imshow("CTello Stream", frame);
             writer << frame;
         }
-        if (waitKey(1) == 27)
+        if (waitKey(1) == 27 || com_end == true)
         {
             break;
         }
