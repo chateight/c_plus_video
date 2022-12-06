@@ -26,7 +26,7 @@
 #include <thread>
 #include <fstream>
 #include "simple_udp.h"
-#include "ctello.h"
+//#include "ctello.h"
 
 
 const char* const TELLO_STREAM_URL{"udp://0.0.0.0:11111"};
@@ -34,7 +34,7 @@ simple_udp udp0_s("192.168.10.1",8889);
 simple_udp udp0_r("0.0.0.0",8889);
 simple_udp udp1("0.0.0.0",8890);
 
-using ctello::Tello;
+//using ctello::Tello;
 using cv::CAP_FFMPEG;
 using cv::imshow;
 using cv::VideoCapture;
