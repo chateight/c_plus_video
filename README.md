@@ -14,6 +14,7 @@ command.txt file describes the tello control command sequence.
 how to build(@ source directory)
 
 % cmake -S . -B build
+
 % cmake --build build
 
 link to the tello sdk icnluding command list

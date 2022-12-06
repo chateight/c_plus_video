@@ -21,7 +21,6 @@ test.*
 test
 /src/spdlog
 /build
-!CMakeLists.txt
 !command.txt
 ctello.h
 ctello.cpp
